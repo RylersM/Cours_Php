@@ -1,0 +1,155 @@
+## Commande de lancement du server
+Dans le terminal
+php -S localhost:3000 // permet de lancer le fichier avec l'extension .php;
+php -S localhost:3000 -t public //cette commande permet de lancer le fichier php depuis un autre dossier
+
+## variable
+- declarations
+En php, toutes les variables commencent par le symbole **$** 
+
+Exemple : 
+$user = "John";
+$num = "2";
+La convention denommage des variables est la suivante
+1- toutes les variables commencent forcément par un dollar
+2- le nom d'une variable doit être composé uniquement de caractère alpha-numérique et du tiret de 8 (_)
+3- le nom d'une variable ne doit pas commencer par un chiffre
+
+
+## Les types de variabes
+    En Php le type d'une variable lui est assigné quand vous lui donnez une valeur. On utilise la fonction `var_dump()`
+    pour avoir les informations, concernant le type de variable.
+### string 
+représente les chaînes de caractère.
+Exemples : 
+    $user = "salut";
+    $firstname = "John";
+    $lastname = 'Doe';
+
+## numbers
+ils representent tous les nombres entiers comme à virgulee. On en distingue deux séparations : 
+-int : désignant les nombres  entiers
+-float : désignant les nombres flottants (nombres décimaux)
+    Exemple:
+    ```php $num1 = 3; 
+    $moyenne = 18.5;
+    var_dump($num1); //
+    var_dump($moyenne);
+    ```
+
+## les boolean
+représentent les valeurs de vérités; soit **true** ou soit **false**
+
+
+## null
+represent l'absence de valeurs
+
+```php
+$data = null;
+var_dump($data);// null
+```
+
+## array
+représente un tableau
+```php
+$fruits = array("pomme", "orange", "banane");
+$notes = [20, 15, 18];
+$arr = ["Hello", 15, true, false, null];
+var_dump($arr, $fruits, $notes);
+```
+
+
+## object
+represent les objets. Pour créer un objet il faut créer une classe, puis l'instancier
+```php
+class User {};
+$u = new User();
+$u2 = new User();
+var_dump($u);
+var_dump($u2);
+```
+
+## Type de conversion
+pour convertir d'un type à un autre, il suffit de préciser l'opérateur de conversion explicite.
+```php
+$floatNum = 3.14;
+$intNum = (int)$floatNum;// on obtient un nombre entier naturel
+$x = (int)3.14
+var_dump($floatNum, $intNum, $x)
+```
+En plus nous pouvons utiliser les fonctions php natives telles que *intval()*, *floatval()*, *boolval()* ...
+```php
+$floatNum = 3.14;
+$intNum = intval($floatNum);// on obtient un nombre entier naturel
+$y = floatval(3);
+var_dump($floatNum, $intNum, $x)
+```
+
+## Les conditions
+Les conditions en PHP sont identiques au JS, et on y retrouve les mêmes opérateurs de comparaison tels que: <, <=, >, >=, !=, =,
+
+/*les conditions 
+déclarez une variable age:
+ecrire une logique qui affiche:
+-"vous êtes mineur": si l'age est inférieur à 18
+-"vous êtes majeur": si l'age est supérieur à 18
+-"vous avez 18ans" : si l'age est égal à 18;
+*/
+echo "<pre>";
+$age = 18;
+
+if ($age < 18) {
+    echo "vous êtes mineur";
+} else if ($age > 18) {
+    echo "vous êtes majeur";
+} else {
+    echo "vous avez 18ans";
+}
+;
+echo "</pre>";
+
+//la conditions switch
+$day = 4;
+switch ($day) {
+    case 0:
+        echo "lundi";
+        break;
+    case 1:
+        echo "mardi";
+        break;
+    case 2:
+        echo "mercredi";
+        break;
+    case 3:
+        echo "jeudi";
+        break;
+    case 4:
+        echo " c'est bien le 5eme jour de la semaine qui est vendredi";
+        break;
+    case 5:
+        echo "samdi";
+        break;
+    case 6:
+        echo "dimanche";
+        break;
+}
+
+//afficher à l'aide de la boucle while 
+$number = 0;
+while ($number < 10) {
+    echo $number++;
+}
+
+//afficher avec for
+echo "<br>";
+for ($number = 0; $number < 10; $number++) {
+    echo $number;
+}
+;
+$fruits = ['pomme', 'raisin', 'banane'];
+echo count($fruits);
+for ($i=0; $i < count($fruits); $i++) {
+    echo " ". $fruits[$i]. " ";
+}
+
+
